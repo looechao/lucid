@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="home-container">
+    <section class="recent-posts">
+        <h2>Recent Posts</h2>
+        <div class="post-list">
+            {{ range .Site.RegularPages }}
+            <article class="post-item">
+                <time class="post-date">{{ .Date.Format "2006-01-02" }}</time>
+                <h3 class="post-title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="contribution-graph">
+        <h2>Contribution Graph</h2>
+        <div id="contribution-graph"></div>
+    </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 这里将来添加贡献点阵图的 JavaScript 代码
+    // 可以使用 GitHub 的 API 或者自定义数据
+});
+</script>
+{{ end }} 
