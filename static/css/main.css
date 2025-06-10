@@ -143,10 +143,20 @@ body {
 
 /* ===== 页脚样式 ===== */
 .site-footer {
-    text-align: center;
-    padding: 2rem 0;         /* 上下内边距 */
+    /* 基础样式 */
+    padding: 2rem 0;
     color: var(--secondary-color);
     font-size: 0.9rem;
+    
+    /* 布局相关 */
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding-left: 1rem;  /* 与导航栏左对齐 */
+    
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+        padding-left: 0.5rem;  /* 移动端减小内边距 */
+    }
 }
 
 /* ===== 响应式设计 ===== */
