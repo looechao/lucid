@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/base.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/layout.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/components/header.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/components/footer.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/pages/home.css" | relURL }}">
     {{ if .Site.Params.customCSS }}
         {{ range .Site.Params.customCSS }}
             <link rel="stylesheet" href="{{ . | relURL }}">
@@ -12,9 +16,9 @@
     {{ end }}
 </head>
 <body>
-    <header class="site-header">
-        <nav class="nav">
-            <ul class="nav-menu">
+    <header>
+        <nav>
+            <ul>
                 <li><a href="{{ .Site.BaseURL }}">Home</a></li>
                 <li><a href="{{ "posts" | relURL }}">Posts</a></li>
                 <li><a href="{{ "weekly" | relURL }}">Weekly</a></li>
@@ -27,7 +31,7 @@
         {{ block "main" . }}{{ end }}
     </main>
 
-    <footer class="site-footer">
+    <footer>
         <p>&copy; {{ now.Year }} {{ .Site.Params.author }}</p>
     </footer>
 </body>

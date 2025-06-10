@@ -1,0 +1,16 @@
+/* 页脚样式 */
+footer {
+    max-width: var(--content-width);
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: left;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+    position: absolute;
+    left: 1rem;
+} 
