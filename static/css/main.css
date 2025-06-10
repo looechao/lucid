@@ -1,0 +1,263 @@
+/* ===== 全局变量 ===== */
+:root {
+    /* 颜色变量 - 修改这些值可以改变整个网站的颜色主题 */
+    --primary-color: #333;      /* 主要文字颜色 */
+    --secondary-color: #666;    /* 次要文字颜色 */
+    --background-color: #fff;   /* 背景颜色 */
+    --accent-color: #007bff;    /* 强调色（用于链接、按钮等） */
+    
+    /* 字体设置 */
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    /* 布局尺寸 */
+    --content-width: 600px;     /* 内容区域最大宽度 */
+    --nav-bg: rgba(255, 255, 255, 0.1);  /* 导航栏背景色（半透明） */
+}
+
+/* ===== 基础样式重置 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* 使元素的内边距和边框包含在宽度和高度内 */
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;        /* 行高，影响文字间距 */
+    color: var(--primary-color);
+    background: var(--background-color);
+}
+
+/* ===== 导航栏样式 ===== */
+.site-header {
+    /* 基础样式 */
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.5);
+    background: var(--nav-bg);
+    
+    /* 固定定位相关 */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+    /* 毛玻璃效果 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* 确保导航栏始终可见且占满宽度 */
+    width: 100%;
+}
+
+/* 导航栏容器 */
+.nav {
+    /* 保持固定宽度 */
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+    
+    /* 弹性布局 */
+    display: flex;
+    justify-content: flex-end;  /* 内容右对齐 */
+    align-items: center;
+    
+    /* 处理溢出 */
+    overflow-x: auto;  /* 允许横向滚动 */
+    -webkit-overflow-scrolling: touch;  /* iOS 平滑滚动 */
+    scrollbar-width: none;  /* Firefox 隐藏滚动条 */
+    -ms-overflow-style: none;  /* IE 和 Edge 隐藏滚动条 */
+}
+
+/* 隐藏滚动条 */
+.nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* 导航菜单列表 */
+.nav-menu {
+    /* 基础布局 */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    /* 使用 gap 控制间距，更灵活 */
+    gap: 2rem;
+    
+    /* 防止菜单被压缩 */
+    flex-shrink: 0;  /* 禁止收缩 */
+}
+
+/* 导航菜单项 */
+.nav-menu li {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;  /* 禁止收缩 */
+}
+
+/* 导航链接样式 */
+.nav-menu a {
+    /* 文字样式 */
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    
+    /* 布局相关 */
+    padding: 0.5rem 0;
+    position: relative;
+    white-space: nowrap;
+    display: block;  /* 确保链接占满整个区域 */
+    
+    /* 交互效果 */
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 导航链接悬停效果 */
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+/* 导航链接下划线动画 */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+/* 导航链接悬停时显示下划线 */
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* ===== 主要内容区域 ===== */
+.site-main {
+    max-width: var(--content-width);
+    margin: 2rem auto;       /* 上下间距 2rem，左右自动居中 */
+    padding: 0 1rem;         /* 左右内边距 */
+}
+
+/* ===== 页脚样式 ===== */
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;         /* 上下内边距 */
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* ===== 响应式设计 ===== */
+/* 当屏幕宽度小于 768px 时应用以下样式 */
+@media (max-width: 768px) {
+    /* 导航栏容器在移动端的调整 */
+    .nav {
+        padding: 0 0.5rem;  /* 减小内边距 */
+    }
+
+    /* 导航菜单在移动端的调整 */
+    .nav-menu {
+        gap: 1.5rem;  /* 减小间距 */
+    }
+
+    /* 导航链接在移动端的调整 */
+    .nav-menu a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.3rem;
+    }
+}
+
+/* 列表页面通用样式 */
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-description {
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+/* 文章列表样式 */
+.post-list, .weekly-list, .podcast-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.post-item, .weekly-item, .podcast-item {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.post-item:hover, .weekly-item:hover, .podcast-item:hover {
+    transform: translateY(-2px);
+}
+
+.post-date, .weekly-date, .podcast-date {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.post-title, .weekly-title, .podcast-title {
+    margin: 0.5rem 0;
+}
+
+.post-title a, .weekly-title a, .podcast-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover, .weekly-title a:hover, .podcast-title a:hover {
+    color: var(--accent-color);
+}
+
+.post-description, .weekly-description, .podcast-description {
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+/* 播客特定样式 */
+.podcast-item {
+    border-left: 4px solid var(--accent-color);
+}
+
+/* 周报特定样式 */
+.weekly-item {
+    border-left: 4px solid #28a745;
+}
+
+/* 贡献图样式 */
+.contribution-graph {
+    margin-top: 3rem;
+}
+
+#contribution-graph {
+    margin-top: 1rem;
+    min-height: 200px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.nav-brand {
+    margin-right: auto;
+}
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-brand a:hover {
+    color: var(--accent-color);
+}
+ 

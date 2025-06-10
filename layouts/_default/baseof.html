@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    {{ $style := resources.Get "css/main.css" | resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    {{ if .Site.Params.customCSS }}
+        {{ range .Site.Params.customCSS }}
+            <link rel="stylesheet" href="{{ . | relURL }}">
+        {{ end }}
+    {{ end }}
 </head>
 <body>
     <header class="site-header">
         <nav class="nav">
-            <div class="nav-brand">
-                <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-            </div>
             <ul class="nav-menu">
+                <li><a href="{{ .Site.BaseURL }}">Home</a></li>
                 <li><a href="{{ "posts" | relURL }}">Posts</a></li>
                 <li><a href="{{ "weekly" | relURL }}">Weekly</a></li>
-                <li><a href="{{ "podcasts" | relURL }}">Podcasts</a></li>
-                <li><a href="{{ "about" | relURL }}">About</a></li>
                 <li><a href="{{ "tags" | relURL }}">Tags</a></li>
             </ul>
         </nav>
