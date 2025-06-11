@@ -1,10 +1,10 @@
 <header>
     <nav>
         <ul>
-            <li><a href="{{ .Site.BaseURL }}">Home</a></li>
-            <li><a href="{{ "posts" | relURL }}">Posts</a></li>
-            <li><a href="{{ "weekly" | relURL }}">Weekly</a></li>
-            <li><a href="{{ "tags" | relURL }}">Tags</a></li>
+            <li><a href="{{ .Site.BaseURL }}" {{ if .IsHome }}class="active"{{ end }}>Home</a></li>
+            <li><a href="{{ "posts" | relURL }}" {{ if eq .Section "posts" }}class="active"{{ end }}>Posts</a></li>
+            <li><a href="{{ "weekly" | relURL }}" {{ if eq .Section "weekly" }}class="active"{{ end }}>Weekly</a></li>
+            <li><a href="{{ "tags" | relURL }}" {{ if eq .Section "tags" }}class="active"{{ end }}>Tags</a></li>
         </ul>
     </nav>
 </header>

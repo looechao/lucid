@@ -1,0 +1,264 @@
+/* 文章页样式 */
+
+/* 文章容器
+   - 最大宽度与内容区域一致
+   - 居中对齐
+   - 适当的内边距
+   -------------------------------------------------------------------------- */
+.single-article {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* 文章头部
+   - 与文章内容融为一体
+   - 自然滚动
+   -------------------------------------------------------------------------- */
+.article-header {
+    margin-bottom: 2rem;
+}
+
+/* 文章标题
+   - 字体大小和粗细
+   - 下边距
+   -------------------------------------------------------------------------- */
+.article-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+/* 文章元数据
+   - 日期和标签的布局
+   - 颜色和字体大小
+   -------------------------------------------------------------------------- */
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.article-date {
+    font-weight: 300;
+}
+
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.article-tag {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.article-tag:hover {
+    color: var(--accent-color-hover);
+    text-decoration: underline;
+}
+
+/* 文章内容
+   - 排版和间距
+   - 代码块和引用样式
+   -------------------------------------------------------------------------- */
+.article-content {
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: var(--primary-color);
+}
+
+.article-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+    color: var(--primary-color);
+}
+
+.article-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.2rem 0 0.8rem;
+    color: var(--primary-color);
+}
+
+.article-content ul,
+.article-content ol {
+    margin: 1rem 0 1.5rem;
+    padding-left: 2rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: var(--radius);
+}
+
+.article-content blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.article-content pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+body.dark-mode .article-content pre {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.article-content code {
+    font-family: var(--font-code);
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+body.dark-mode .article-content code {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.article-content pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.article-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition-fast);
+}
+
+.article-content a:hover {
+    border-color: var(--accent-color);
+}
+
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.article-content th,
+.article-content td {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.article-content th {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .article-content th {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.article-content hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 2rem 0;
+}
+
+/* 文章页脚
+   - 上一篇/下一篇导航
+   - 布局和样式
+   -------------------------------------------------------------------------- */
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.article-nav-prev,
+.article-nav-next {
+    max-width: 45%;
+}
+
+.article-nav-prev span,
+.article-nav-next span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+}
+
+.article-nav-prev a,
+.article-nav-next a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+}
+
+.article-nav-prev a:hover,
+.article-nav-next a:hover {
+    color: var(--accent-color-hover);
+}
+
+.article-nav-next {
+    text-align: right;
+}
+
+/* 响应式设计
+   - 移动端布局调整
+   - 字体大小调整
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .article-title {
+        font-size: 1.75rem;
+    }
+    
+    .article-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .article-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .article-nav-prev,
+    .article-nav-next {
+        max-width: 100%;
+    }
+    
+    .article-nav-next {
+        text-align: left;
+    }
+}

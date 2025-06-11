@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="{{ "css/layout.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/components/header.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/components/footer.css" | relURL }}">
+    {{ if .IsHome }}
+    <link rel="stylesheet" href="{{ "css/pages/home.css" | relURL }}">
+    {{ else if eq .Kind "section" "taxonomy" "term" }}
+    <link rel="stylesheet" href="{{ "css/pages/list.css" | relURL }}">
+    {{ else if eq .Kind "page" }}
+    <link rel="stylesheet" href="{{ "css/pages/single.css" | relURL }}">
+    {{ end }}
     {{ if .Site.Params.customCSS }}
         {{ range .Site.Params.customCSS }}
             <link rel="stylesheet" href="{{ . | relURL }}">
