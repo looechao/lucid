@@ -1,20 +1,53 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-US'
-title = 'My New Hugo Site'
+languageCode = 'zh-CN'
+title = 'Lucid 主题演示'
+paginate = 20
+
+
+# 网站参数
+[params]
+  # 基本信息
+  author = "Lucid 创建者"
+  description = "一个追求冷静、理智、真诚、简约的 Hugo 主题"
+  
+  # 社交媒体链接
+  [params.social]
+    github = "https://github.com/username"
+    twitter = "https://twitter.com/username"
+    email = "your-email@example.com"
+  
+  # 开源项目
+  [[params.projects]]
+    name = "Lucid 主题"
+    description = "一个简约、优雅的 Hugo 主题"
+    url = "https://github.com/username/lucid"
+    logo = "/images/projects/lucid-logo.png"
+  
+  [[params.projects]]
+    name = "项目二"
+    description = "另一个很棒的开源项目"
+    url = "https://github.com/username/project-two"
+    logo = "/images/projects/project-two-logo.png"
+  
+  [[params.projects]]
+    name = "项目三"
+    description = "第三个开源项目"
+    url = "https://github.com/username/project-three"
+    logo = "/images/projects/project-three-logo.png"
 
 [menus]
   [[menus.main]]
-    name = 'Home'
+    name = '首页'
     pageRef = '/'
     weight = 10
 
   [[menus.main]]
-    name = 'Posts'
+    name = '文章'
     pageRef = '/posts'
     weight = 20
 
   [[menus.main]]
-    name = 'Tags'
+    name = '标签'
     pageRef = '/tags'
     weight = 30
 
