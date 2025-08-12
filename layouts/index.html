@@ -52,7 +52,6 @@
 
     <!-- 开源项目展示部分 -->
     <section class="projects">
-        <h2 class="section-title">开源项目</h2>
         <div class="project-logos">
             {{ range .Site.Params.projects }}
             <a href="{{ .url }}" class="project-logo-link" target="_blank" rel="noopener noreferrer" title="{{ .name }}: {{ .description }}">
@@ -67,7 +66,6 @@
 
     <!-- 最新文章列表部分 -->
     <section class="recent-posts">
-        <h2 class="section-title">最新文章</h2>
         {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections | default (where site.RegularPages "Section" "posts") }}
         {{ $paginator := .Paginate $pages }}
         

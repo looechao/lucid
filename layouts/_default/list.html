@@ -6,7 +6,7 @@
     </div>
     {{ end }}
     
-    {{ $paginator := .Paginate .Pages }}
+    {{ $paginator := .Paginate .Pages 20 }}  <!--每页显示20篇-->
     
     <div class="posts">
         {{ $postsByYear := $paginator.Pages.GroupByDate "2006" }}

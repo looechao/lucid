@@ -17,21 +17,5 @@
     <div class="article-content">
         {{ .Content }}
     </div>
-
-    <footer class="article-footer">
-        {{ with .PrevInSection }}
-        <div class="article-nav-prev">
-            <span>上一篇</span>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </div>
-        {{ end }}
-        
-        {{ with .NextInSection }}
-        <div class="article-nav-next">
-            <span>下一篇</span>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </div>
-        {{ end }}
-    </footer>
 </article>
 {{ end }}

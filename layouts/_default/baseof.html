@@ -6,7 +6,7 @@
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <link rel="stylesheet" href="{{ "css/base.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/layout.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/components/header.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/components/sidebar.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/components/footer.css" | relURL }}">
     {{ if .IsHome }}
     <link rel="stylesheet" href="{{ "css/pages/home.css" | relURL }}">
@@ -22,12 +22,14 @@
     {{ end }}
 </head>
 <body>
-    {{ partial "header.html" . }}
-
-    <main class="site-main">
-        {{ block "main" . }}{{ end }}
-    </main>
-
-    {{ partial "footer.html" . }}
+    <div class="site-container">
+        <aside class="site-sidebar">
+            {{ partial "sidebar.html" . }}
+        </aside>
+        <main class="site-content">
+            {{ block "main" . }}{{ end }}
+            {{ partial "footer.html" . }}
+        </main>
+    </div>
 </body>
 </html>
