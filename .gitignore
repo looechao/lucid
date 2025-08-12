@@ -4,6 +4,7 @@
 
 # Temporary files
 .hugo_build.lock
+/content/*
 
 # OS generated files
 .DS_Store
