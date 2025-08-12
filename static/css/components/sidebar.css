@@ -1,0 +1,42 @@
+/* 侧边栏组件样式 */
+
+/* 移除包裹 <nav> 的 <header> 可能带来的额外边距 */
+.site-sidebar header {
+    margin: 0;
+    padding: 0;
+}
+
+/* 导航菜单占满侧边栏宽度 */
+.site-sidebar nav,
+.site-sidebar nav ul {
+    width: 100%;
+}
+
+/* 移除默认的列表样式 */
+.site-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 列表项变为块级元素，垂直排列 */
+.site-sidebar li {
+    display: block;
+    margin-bottom: 0.5rem; /* 增加列表项之间的间距 */
+}
+
+/* 链接样式 */
+.site-sidebar a {
+    display: block; /* 让链接填满整个列表项，方便点击 */
+    padding: 0.75rem 1rem; /* 增加内边距 */
+    text-decoration: none;
+    color: #333;
+    border-radius: 6px; /* 圆角 */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* 鼠标悬停时的样式 */
+.site-sidebar a:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
