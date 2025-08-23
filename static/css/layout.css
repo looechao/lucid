@@ -1,58 +1,50 @@
-/* --- 全局盒子模型 --- */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/* --- 左侧边栏布局 --- */
-
-/* 1. 主容器使用 Flexbox 布局 */
 .site-container {
-  display: flex;
-  align-items: flex-start; /* 顶部对齐 */
-  max-width: 1280px; /* 给一个最大宽度，在超宽屏上更好看 */
-  margin: 0 auto; /* 居中 */
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FAFAFA;
 }
 
-/* 2. 定义左侧侧边栏的样式 */
 .site-sidebar {
-  width: 240px;          /* 固定宽度，你可以根据喜好调整 */
-  flex-shrink: 0;        /* 防止侧边栏在空间不足时被压缩 */
-  height: 100vh;         /* 让侧边栏和视口一样高 */
-  position: sticky;      /* 让侧边栏在滚动时“粘”在原地 */
-  top: 0;                /* 粘在顶部 */
-  padding: 2rem;         /* 增加一些内部间距 */
-  background: #fdfdfd;   /* 给个稍微不同的背景色 */
-  border-right: 1px solid #eee; /* 右侧加个边框 */
-  overflow-y: auto;      /* 如果侧边栏内容过长，允许滚动 */
+    width: 20%;          /* 左侧占 30% */
+    flex: 0 0 20%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background: #FAFAFA;
+    overflow-y: auto;
+    padding: 6rem 3rem;
 }
 
-/* 3. 定义右侧主内容区的样式 */
 .site-content {
-  flex-grow: 1;          /* 让主内容区占据所有剩余空间 */
-  padding: 2rem 4rem;    /* 增加一些内部间距 (上下 右左) */
-  min-width: 0;          /* 防止内容溢出时破坏布局 */
+    width: calc(60% - 40px);  /* 右侧内容区占 60% 减去间距 */
+    flex: 0 0 calc(60% - 40px);
+    margin: 30px 30px;        /* 上下左右留点间距 */
+    padding: 1rem;
+    min-width: 0;
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
-/* --- 响应式设计：在小屏幕上恢复正常布局 --- */
+/* 右侧自然占据剩余的 20% 空间 */
+
 @media (max-width: 768px) {
-  .site-container {
-    /* 从左右并排变回上下堆叠 */
-    flex-direction: column;
-    max-width: 100%;
-  }
+    .site-container {
+        flex-direction: column;
+    }
 
-  .site-sidebar {
-    width: 100%;         /* 宽度占满 */
-    height: auto;        /* 高度由内容决定 */
-    position: static;    /* 取消粘性定位 */
-    border-right: none;  /* 去掉右边框 */
-    border-bottom: 1px solid #eee; /* 在底部加个边框 */
-  }
+    .site-sidebar {
+        width: 100%;
+        flex: none;
+        height: auto;
+        position: static;
+        padding: 1rem 1rem 0 1rem;
+    }
 
-  .site-content {
-    padding: 2rem 1.5rem; /* 调整一下小屏幕上的间距 */
-  }
+    .site-content {
+        width: calc(100% - 40px);
+        flex: none;
+        margin: 20px;
+    }
 }
