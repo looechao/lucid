@@ -7,39 +7,22 @@ paginate = 20
 # 网站参数
 [params]
   # 基本信息
-  author = "Lucid 创建者"
-  description = "一个追求冷静、理智、真诚、简约的 Hugo 主题"
-  favicon = "/images/favicon.png"  # 网站图标路径，相对于 static 目录
+  author = "Lucid"
+  description = "Lucid "
+  favicon = "/images/favicon.png"  
   
   # 个人资料配置
   [params.profile]
-    name = "Looe"
-    bio = "looechao"
+    name = "username"
+    bio = "bio"
     avatar = "/images/avatar.png"  # 头像图片路径，相对于 static 目录
   
   # 社交媒体链接
   [params.social]
-    telegram = "https://t.me/SummerMoon"
-    github = "https://github.com/looechao"
-  
-  # 开源项目
-  [[params.projects]]
-    name = "Lucid 主题"
-    description = "一个简约、优雅的 Hugo 主题"
-    url = "https://github.com/username/lucid"
-    logo = "/images/projects/lucid-logo.png"
-  
-  [[params.projects]]
-    name = "项目二"
-    description = "另一个很棒的开源项目"
-    url = "https://github.com/username/project-two"
-    logo = "/images/projects/project-two-logo.png"
-  
-  [[params.projects]]
-    name = "项目三"
-    description = "第三个开源项目"
-    url = "https://github.com/username/project-three"
-    logo = "/images/projects/project-three-logo.png"
+    email = ""
+    github = ""
+    rss = ""
+
 
 [menus]
   [[menus.main]]
