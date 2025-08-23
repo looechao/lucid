@@ -9,12 +9,18 @@ paginate = 20
   # 基本信息
   author = "Lucid 创建者"
   description = "一个追求冷静、理智、真诚、简约的 Hugo 主题"
+  favicon = "/images/favicon.png"  # 网站图标路径，相对于 static 目录
+  
+  # 个人资料配置
+  [params.profile]
+    name = "Looe"
+    bio = "looechao"
+    avatar = "/images/avatar.png"  # 头像图片路径，相对于 static 目录
   
   # 社交媒体链接
   [params.social]
-    github = "https://github.com/username"
-    twitter = "https://twitter.com/username"
-    email = "your-email@example.com"
+    telegram = "https://t.me/SummerMoon"
+    github = "https://github.com/looechao"
   
   # 开源项目
   [[params.projects]]
