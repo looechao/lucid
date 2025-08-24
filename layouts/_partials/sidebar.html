@@ -17,10 +17,7 @@
 
     <!-- 导航菜单 -->
     <nav class="nav">
-        <a href="{{ .Site.BaseURL }}" {{ if .IsHome }}class="active" {{ end }}>BLOG</a>
-        <a href="{{ "archive" | relURL }}" {{ if eq .Section "archive" }}class="active" {{ end }}>ARCHIVE</a>
-        <a href="{{ "daily" | relURL }}" {{ if eq .Section "daily" }}class="active" {{ end }}>DAILY</a>
-        <a href="{{ "links" | relURL }}" {{ if eq .Section "links" }}class="active" {{ end }}>FRIENDS</a>
+        <a href="{{ .Site.BaseURL }}" {{ if .IsHome }}class="active" {{ end }}>HOME</a>
         <a href="{{ "projects" | relURL }}" {{ if eq .Section "projects" }}class="active" {{ end }}>PROJECTS</a>
         <a href="{{ "about" | relURL }}" {{ if eq .Section "about" }}class="active" {{ end }}>ABOUT</a>
     </nav>
