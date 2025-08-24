@@ -4,7 +4,8 @@ footer {
     margin: 0rem auto;
     padding:  2rem;
     text-align: left;
-    color: var(--secondary-color);
+    font-weight: 100;
+    color: var(--color-gray);
     font-size: 0.9rem;
     position: relative;
 }
