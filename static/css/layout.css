@@ -6,7 +6,8 @@
 }
 
 .site-sidebar {
-    width: 20%;          /* 左侧占 30% */
+    width: 20%;
+    /* 左侧占 30% */
     flex: 0 0 20%;
     height: 100vh;
     position: sticky;
@@ -17,14 +18,29 @@
 }
 
 .site-content {
-    width: calc(60% - 40px);  /* 右侧内容区占 60% 减去间距 */
+    width: calc(60% - 40px);
+    /* 中间内容区占 60% 减去间距 */
     flex: 0 0 calc(60% - 40px);
-    margin: 30px 30px;        /* 上下左右留点间距 */
+    margin: 30px 5px 30px 30px;
+    /* 调整右边距，为右侧面板留空间 */
     padding: 1rem;
     min-width: 0;
     border-radius: 16px;
     background: #FFFFFF;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.site-right-panel {
+    width: 20%;
+    /* 右侧占 20% */
+    flex: 0 0 20%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background: #FAFAFA;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem 1rem 1rem 0;
 }
 
 /* 右侧自然占据剩余的 20% 空间 */
@@ -46,5 +62,10 @@
         width: calc(100% - 40px);
         flex: none;
         margin: 20px;
+    }
+
+    .site-right-panel {
+        display: none;
+        /* 在移动设备上隐藏右侧面板 */
     }
 }
