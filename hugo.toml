@@ -39,6 +39,11 @@ title = 'Lucid 主题演示'
     pageRef = '/tags'
     weight = 30
 
+  [[menus.main]]
+    name = '归档'
+    url = '/archive/'
+    weight = 40
+
 [module]
   [module.hugoVersion]
     extended = false
