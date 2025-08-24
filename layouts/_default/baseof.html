@@ -19,6 +19,9 @@
     {{ else if eq .Kind "page" }}
     <link rel="stylesheet" href="{{ "css/pages/single.css" | relURL }}">
     {{ end }}
+    {{ if eq .Layout "archive" }}
+    <link rel="stylesheet" href="{{ "css/pages/archive.css" | relURL }}">
+    {{ end }}
     {{ if .Site.Params.customCSS }}
         {{ range .Site.Params.customCSS }}
             <link rel="stylesheet" href="{{ . | relURL }}">
