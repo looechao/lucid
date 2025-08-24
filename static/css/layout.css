@@ -1,14 +1,18 @@
+body {
+    background-color: #FAFAFA;
+}
+
 .site-container {
     display: flex;
     width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
     min-height: 100vh;
     background-color: #FAFAFA;
 }
 
 .site-sidebar {
-    width: 20%;
-    /* 左侧占 30% */
-    flex: 0 0 20%;
+    flex: 0 0 16rem;
     height: 100vh;
     position: sticky;
     top: 0;
@@ -18,22 +22,20 @@
 }
 
 .site-content {
-    width: calc(60% - 40px);
-    /* 中间内容区占 60% 减去间距 */
-    flex: 0 0 calc(60% - 40px);
-    margin: 30px 5px 30px 30px;
-    /* 调整右边距，为右侧面板留空间 */
-    padding: 1rem;
+    flex: 1 1 auto;
     min-width: 0;
+    margin: 30px 5px 30px 30px;
+    padding: 1rem;
     border-radius: 16px;
     background: #FFFFFF;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .site-right-panel {
-    width: 20%;
-    /* 右侧占 20% */
-    flex: 0 0 20%;
+    flex: 0 0 18rem;
+    /* 固定宽度 */
+    min-width: 18rem;
+    /* 最小宽度 */
     height: 100vh;
     position: sticky;
     top: 0;
@@ -45,7 +47,7 @@
 
 /* 右侧自然占据剩余的 20% 空间 */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .site-container {
         flex-direction: column;
     }
