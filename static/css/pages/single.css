@@ -199,9 +199,7 @@ body.dark-mode {
     transition: var(--transition-fast);
 }
 
-.article-content a:hover {
-    border-color: var(--link-border-hover);
-}
+
 
 /* 表格样式 */
 .article-content table {

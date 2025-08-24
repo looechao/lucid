@@ -43,6 +43,13 @@
     font-weight: 600;
 }
 
+.tag {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin: 1.5rem 0 0.8rem;
+    font-weight: 600;
+}
+
 .posts-list {
     display: flex;
     flex-direction: column;
