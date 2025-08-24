@@ -6,7 +6,7 @@
    - 适当的内边距
    -------------------------------------------------------------------------- */
 .list-container {
-    max-width: var(--content-width);
+    width: 95%;
     margin: 0 auto;
     padding: 1rem;
 }

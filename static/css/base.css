@@ -2,10 +2,11 @@
 :root {
     /* 颜色 */
     --primary-color: #333;
-    --secondary-color: #666;
-    --background-color: #fff;
-    --accent-color: #007bff;
-    --nav-bg: rgba(255, 255, 255, 0.1);
+    --border-color: #e0e0e0;
+    --text-color: #27272a;
+    --text-light: #888;
+    --transition-fast: all 0.3s ease;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     
     /* 布局 */
     --content-width: 600px;

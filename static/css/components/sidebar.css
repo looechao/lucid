@@ -20,8 +20,8 @@
 
 /* 头像 */
 .avatar {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
     background: linear-gradient(135deg, #9ACD32 0%, #7CB342 100%);
@@ -35,7 +35,7 @@
     flex-shrink: 0;
     transform: translateX(25px);
     border: 3px solid white;
-    box-shadow: 0 0 1px rgba(0,0,0,0.15);
+    box-shadow: 0 0 2px rgba(0,0,0,0.15);
 }
 
 /* 头像内图片 */
@@ -46,12 +46,13 @@
     display: block;
 }
 
-
+/* 姓名样式 */
 .name {
     font-size: 22px;      /* 字体大小 */
     color: #333333;       /* 字体颜色 */
 }
 
+/* 简介文本 */
 .bio {
     white-space: normal;
     word-break: break-word;
@@ -60,7 +61,7 @@
     text-align: right; 
 }
 
-
+/* 个人信息文字 */
 .profile-text {
     color: #666;
     text-align: right;
@@ -94,7 +95,7 @@
 .site--icons {
     display: flex;               /* 横向排列 */
     justify-content: flex-end;   /* 靠右对齐 */
-    gap: 0.5rem;                /* 图标间距稍微小一点 */
+    gap: 1rem;                   /* 图标间距 */
     width: 100%;
 }
 
@@ -113,6 +114,7 @@
     color: #333;
 }
 
+/* SVG 图标样式 */
 .site--icons svg {
     width: 20px;
     height: 20px;
@@ -120,18 +122,21 @@
     transition: fill 0.2s ease;
 }
 
-
+/* 媒体查询：响应式布局调整 */
 @media (max-width: 768px) {
+    /* 侧边栏整体调整 */
     .sidebar {
         padding: 1rem 1rem 0 1rem;
         align-items: center; /* 改为居中 */
     }
-    
+
+    /* 个人信息区域调整 */
     .profile {
         align-items: center; /* 头像和文字居中 */
         gap: 0.25rem;
     }
-    
+
+    /* 头像缩小，居中 */
     .avatar {
         width: 70px;
         height: 70px;
@@ -139,12 +144,14 @@
         align-self: center;
         transform: none;
     }
-    
+
+    /* 姓名文字居中 */
     .name {
         font-size: 1.1rem;
-        text-align: center; /* 文字居中 */
+        text-align: center;
     }
-    
+
+    /* 导航和简介隐藏 */
     .nav {
         display: none !important;
     }
@@ -152,28 +159,28 @@
     .bio {
         display: none !important;
     }
-    
+
     /* 社交图标居中 */
     .site--icons {
         justify-content: center !important;
         width: 100%;
         align-self: center;
     }
-    
+
+    /* 图标尺寸调整 */
     .site--icons a {
         width: 28px;
         height: 28px;
     }
-    
+
+    /* SVG 图标尺寸调整 */
     .site--icons svg {
         width: 24px;
         height: 24px;
     }
 }
 
-
-
-/* 清除旧样式 */
+/* 清除旧样式，避免影响 */
 .site-sidebar header,
 .sidebar-header,
 .profile-section,

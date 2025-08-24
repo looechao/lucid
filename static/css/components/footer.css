@@ -1,8 +1,8 @@
 /* 页脚样式 */
 footer {
-    max-width: var(--content-width);
-    margin: 2rem auto;
-    padding: 1rem;
+    width: 95%;
+    margin: 0rem auto;
+    padding:  2rem;
     text-align: left;
     color: var(--secondary-color);
     font-size: 0.9rem;
