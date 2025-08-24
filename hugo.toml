@@ -1,7 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'zh-CN'
 title = 'Lucid 主题演示'
-paginate = 20
 
 
 # 网站参数
@@ -19,8 +18,8 @@ paginate = 20
   
   # 社交媒体链接
   [params.social]
-    email = ""
-    github = ""
+    email = "x"
+    github = "https://github.com/looechao"
     rss = ""
 
 
