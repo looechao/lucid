@@ -22,6 +22,21 @@ title = 'Lucid 主题演示'
     github = "https://github.com/looechao"
     rss = ""
 
+  # Gitalk 评论配置
+  [params.gitalk]
+    enable = true
+    clientID = "4fad9f9325f73f2c2891"
+    clientSecret = "109ed02ced3608e776a41f87de4ef9986f5b5fd6"
+    repo = "hugo-comments"
+    owner = "looechao"
+    admin = ["looechao"]
+    labels = ["gitalk"]
+    perPage = 50
+    pagerDirection = "last"
+    createIssueManually = false
+    distractionFreeMode = false
+    language = "zh-CN"
+
 
 [menus]
   [[menus.main]]
