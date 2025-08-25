@@ -94,47 +94,31 @@ body.dark-mode .post-item:hover {
     font-weight: 300;
 }
 
-/* 分页
-   - 分页按钮样式
-   - 当前页高亮
+/* 分页器 - 简洁版
+   - 简单的分页样式
+   - 统一的颜色主题
    -------------------------------------------------------------------------- */
 .pagination {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: 3rem;
-}
-
-.page-item {
-    display: inline-block;
-}
-
-.page-link {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--card-bg);
-    color: var(--text-color);
+    gap: 0.3rem;
+    margin: 1.5rem 0;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination a,
+.pagination span {
+    padding: 0.5rem 0.75rem;
     text-decoration: none;
-    transition: var(--transition-fast);
+    color: var(--text-light);
 }
 
-.page-link:hover {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-.page-item.active .page-link {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-.page-item.disabled .page-link {
-    opacity: 0.5;
-    cursor: not-allowed;
+.pagination a:hover,
+.pagination li.page-item.active a,
+.pagination li.page-item.active span {
+    color: #333;
 }
 
 /* 响应式设计
