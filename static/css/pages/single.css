@@ -23,7 +23,7 @@
     /* 文章特定颜色 */
     --blockquote-border: var(--border-color);
     --heading-color: var(--primary-color);
-    --link-color: #85665C;
+    --link-color: #85655c;
     --link-hover-color: var(--accent-color-hover);
     --link-border-hover: var(--accent-color);
     --table-header-bg: var(--bg-light-shade);

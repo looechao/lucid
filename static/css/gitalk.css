@@ -31,6 +31,37 @@
     margin: 0.5rem !important;
 }
 
+.gt-avatar.gt-comment-avatar {
+    border-radius: 50% !important;
+    overflow: hidden;
+}
+
+.gt-comments {
+    padding: 0rem 0rem 0.5rem 0rem !important;
+    margin: 0.1rem !important;
+}
+
+.gt-comment {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0.5rem !important;
+}
+
+.gt-comment-content {
+    margin: 0rem !important;
+}
+
+/* 文字灰色 */
+.gt-comment-username {
+    color: var(--link-color) !important;
+}
+
+/* 图标灰色 */
+.gt-comment-like svg path,
+.gt-comment-reply svg path {
+    fill: var(--link-color) !important;
+}
+
 /* 按钮样式 - 统一浅灰色系 */
 .gt-btn,
 .gt-btn-login {

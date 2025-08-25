@@ -5,12 +5,8 @@
             {{/* 字母数字标签：按字母序 */}}
             {{ range .Site.Taxonomies.tags.Alphabetical }}
             {{ if findRE "^[a-zA-Z0-9]" .Page.Title }}
-            {{ $tagName := .Page.Title }}
-            {{ $isAlphanumeric := findRE "^[a-zA-Z0-9]" $tagName }}
-            <a href="{{ .Page.Permalink }}" 
-               class="tag-item {{ if $isAlphanumeric }}tag-alphanumeric{{ else }}tag-chinese{{ end }}" 
-               data-count="{{ .Count }}">
-                {{ $tagName }}<span class="tag-count">{{ .Count }}</span>
+            <a href="{{ .Page.Permalink }}" class="tag-item tag-alphanumeric" data-count="{{ .Count }}">
+                {{ .Page.Title }}<span class="tag-count">{{ .Count }}</span>
             </a>
             {{ end }}
             {{ end }}
@@ -18,12 +14,8 @@
             {{/* 中文标签：按热度 */}}
             {{ range .Site.Taxonomies.tags.ByCount }}
             {{ if not (findRE "^[a-zA-Z0-9]" .Page.Title) }}
-            {{ $tagName := .Page.Title }}
-            {{ $isAlphanumeric := findRE "^[a-zA-Z0-9]" $tagName }}
-            <a href="{{ .Page.Permalink }}" 
-               class="tag-item {{ if $isAlphanumeric }}tag-alphanumeric{{ else }}tag-chinese{{ end }}" 
-               data-count="{{ .Count }}">
-                {{ $tagName }}<span class="tag-count">{{ .Count }}</span>
+            <a href="{{ .Page.Permalink }}" class="tag-item tag-chinese" data-count="{{ .Count }}">
+                {{ .Page.Title }}<span class="tag-count">{{ .Count }}</span>
             </a>
             {{ end }}
             {{ end }}

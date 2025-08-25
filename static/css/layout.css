@@ -11,6 +11,19 @@ body {
     background-color: #FAFAFA;
 }
 
+/* 调整flex order以保持视觉布局：sidebar(左) -> middle(中) -> right-panel(右) */
+.site-sidebar {
+    order: 1;
+}
+
+.site-middle {
+    order: 2;
+}
+
+.site-right-panel {
+    order: 3;
+}
+
 .site-sidebar {
     flex: 0 0 16rem;
     height: 100vh;
@@ -64,13 +77,12 @@ body {
         flex: none;
         height: auto;
         position: static;
-        padding: 1rem 1rem 0 1rem;
+        padding: 1rem;
     }
 
     .site-middle {
-        width: calc(100% - 40px);
-        flex: none;
-        margin: 20px;
+        flex: 1;
+        margin: 1.25rem;
     }
 
     .site-right-panel {

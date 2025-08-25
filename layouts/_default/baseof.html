@@ -7,6 +7,7 @@
     {{ with .Site.Params.favicon }}
     <link rel="icon" href="{{ . | relURL }}" type="image/x-icon">
     {{ end }}
+    <link rel="preload" href="{{ "css/components/right-panel.css" | relURL }}" as="style">
     <link rel="stylesheet" href="{{ "css/base.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/layout.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/components/sidebar.css" | relURL }}">
@@ -35,6 +36,9 @@
         <aside class="site-sidebar">
             {{ partial "sidebar.html" . }}
         </aside>
+        <aside class="site-right-panel">
+            {{ partial "right-panel.html" . }}
+        </aside>
         <div class="site-middle">
             <main class="site-content">
                 {{ block "main" . }}{{ end }}
@@ -42,9 +46,6 @@
             </main>
             {{ partial "comments.html" . }}
         </div>
-        <aside class="site-right-panel">
-            {{ partial "right-panel.html" . }}
-        </aside>
     </div>
 </body>
 
