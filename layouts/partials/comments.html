@@ -1,4 +1,4 @@
-{{ if and (.Site.Params.gitalk.enable) (not .Params.no_comments) (eq .Kind "page") (not .IsHome) }}
+{{ if and (.Site.Params.gitalk.enable) (not .Params.no_comments) (eq .Section "post") (not .IsHome) }}
 <div class="comments-wrapper">
     <div id="gitalk-container" class="comments-section"></div>
 </div>
