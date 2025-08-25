@@ -29,6 +29,17 @@
     <link rel="stylesheet" href="{{ . | relURL }}">
     {{ end }}
     {{ end }}
+    
+    {{ with .Site.Services.GoogleAnalytics.ID }}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ . }}');
+    </script>
+    {{ end }}
 </head>
 
 <body>
