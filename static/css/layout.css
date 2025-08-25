@@ -21,10 +21,16 @@ body {
     padding: 6rem 3rem;
 }
 
-.site-content {
+.site-middle {
     flex: 1 1 auto;
     min-width: 0;
-    margin: 30px 5px 30px 30px;
+    margin: 30px 5px 30px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.site-content {
     padding: 1rem;
     border-radius: 16px;
     background: #FFFFFF;
@@ -45,6 +51,7 @@ body {
     padding: 1rem 1rem 1rem 0;
 }
 
+
 /* 右侧自然占据剩余的 20% 空间 */
 
 @media (max-width: 900px) {
@@ -60,7 +67,7 @@ body {
         padding: 1rem 1rem 0 1rem;
     }
 
-    .site-content {
+    .site-middle {
         width: calc(100% - 40px);
         flex: none;
         margin: 20px;
