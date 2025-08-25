@@ -1,0 +1,26 @@
+{{ if and (.Site.Params.gitalk.enable) (not .Params.no_comments) (eq .Kind "page") (not .IsHome) }}
+<div class="comments-wrapper">
+    <div id="gitalk-container" class="comments-section"></div>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+<link rel="stylesheet" href="{{ "/css/gitalk.css" | relURL }}">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var gitalk = new Gitalk({
+            clientID: '{{ .Site.Params.gitalk.clientID }}',
+            clientSecret: '{{ .Site.Params.gitalk.clientSecret }}',
+            repo: '{{ .Site.Params.gitalk.repo }}',
+            owner: '{{ .Site.Params.gitalk.owner }}',
+            admin: '{{ .Site.Params.gitalk.admin }}',
+            id: window.location.pathname,
+            perPage: '{{ .Site.Params.gitalk.perPage | default 10 }}',
+            pagerDirection: '{{ .Site.Params.gitalk.pagerDirection | default "last" }}',
+            createIssueManually: {{ .Site.Params.gitalk.createIssueManually | default false }},
+            distractionFreeMode: {{ .Site.Params.gitalk.distractionFreeMode | default false }},
+            language: '{{ .Site.Params.languageCode | default "en-US" }}'
+        });
+        gitalk.render('gitalk-container');
+    });
+</script>
+{{ end }}
