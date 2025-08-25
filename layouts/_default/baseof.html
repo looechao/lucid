@@ -30,7 +30,7 @@
     {{ end }}
     {{ end }}
     
-    {{ with .Site.Services.GoogleAnalytics.ID }}
+    {{ with .Site.Config.Services.GoogleAnalytics.ID }}
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
     <script>
