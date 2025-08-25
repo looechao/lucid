@@ -1,63 +1,77 @@
 baseURL = 'https://example.org/'
-languageCode = 'zh-CN'
-title = 'Lucid 主题演示'
+languageCode = 'en-us'
+title = 'looechao'
 
+[pagination]
+pagerSize = 15
 
 # 网站参数
 [params]
   # 基本信息
-  author = "Lucid"
-  description = "Lucid "
+  author = "looechao"
+  description = "looechao's blog."
   favicon = "/images/favicon.png"  
   
   # 个人资料配置
   [params.profile]
-    name = "username"
-    bio = "bio"
+    name = "Looe"
+    bio = "looechao"
     avatar = "/images/avatar.png"  # 头像图片路径，相对于 static 目录
   
   # 社交媒体链接
   [params.social]
-    email = "x"
-    github = "https://github.com/looechao"
+    email = ""
+    github = ""
     rss = ""
 
   # Gitalk 评论配置
   [params.gitalk]
-    enable = true
-    clientID = "4fad9f9325f73f2c2891"
-    clientSecret = "109ed02ced3608e776a41f87de4ef9986f5b5fd6"
-    repo = "hugo-comments"
-    owner = "looechao"
-    admin = ["looechao"]
-    labels = ["gitalk"]
+    enable = false
+    clientID = "your-client-id"
+    clientSecret = "your-client-secret"
+    repo = "your-repo"
+    owner = "your-github-username"
+    admin = "your-github-username"
+    id = "location.pathname"
+    labels = "gitalk"
     perPage = 50
     pagerDirection = "last"
     createIssueManually = false
     distractionFreeMode = false
-    language = "zh-CN"
-
 
 [menus]
   [[menus.main]]
-    name = '首页'
     pageRef = '/'
     weight = 10
 
   [[menus.main]]
-    name = '文章'
-    pageRef = '/posts'
+    pageRef = '/post'
     weight = 20
 
   [[menus.main]]
-    name = '标签'
+    pageRef = '/post'
+    weight = 25
+
+  [[menus.main]]
     pageRef = '/tags'
     weight = 30
 
-  [[menus.main]]
-    name = '归档'
-    url = '/archive/'
-    weight = 40
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = 'github'
+    tabWidth = 4
 
 [module]
   [module.hugoVersion]
