@@ -24,20 +24,19 @@ pagerSize = 15
     github = ""
     rss = ""
 
-  # Gitalk 评论配置
-  [params.gitalk]
-    enable = false
-    clientID = "your-client-id"
-    clientSecret = "your-client-secret"
-    repo = "your-repo"
-    owner = "your-github-username"
-    admin = "your-github-username"
-    id = "location.pathname"
-    labels = "gitalk"
-    perPage = 50
-    pagerDirection = "last"
-    createIssueManually = false
-    distractionFreeMode = false
+  # Giscus 评论配置
+  [params.giscus]
+    enable = true
+    repo = "your-github-giscus-repo"
+    repo_id = "repoid"
+    category = "category"
+    category_id = "categoryid"
+    mapping = "pathname"
+    reactions_enabled = true
+    emit_metadata = false
+    theme = "light"
+    lang = "en"
+
 
 [menus]
   [[menus.main]]
