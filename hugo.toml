@@ -44,11 +44,11 @@ pagerSize = 15
     weight = 10
 
   [[menus.main]]
-    pageRef = '/post'
+    pageRef = '/posts'
     weight = 20
 
   [[menus.main]]
-    pageRef = '/post'
+    pageRef = '/posts'
     weight = 25
 
   [[menus.main]]
