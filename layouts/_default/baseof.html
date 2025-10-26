@@ -44,7 +44,7 @@
     {{ end }}
 </head>
 
-<body>
+<body{{ if eq .Layout "minimal" }} class="page-about"{{ end }}>
     <div class="site-container">
         <aside class="site-sidebar">
             {{ partial "sidebar.html" . }}
